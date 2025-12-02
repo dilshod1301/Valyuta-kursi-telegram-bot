@@ -100,12 +100,6 @@ async def inline_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     currency = get_currency(query.data)
-    await query.message.reply_text(currency)
-
-
-# >>> TOKEN
-TOKEN = "8543115664:AAETomYbHw1FmpJwUOyfKJ673tuYdAms7h4"
-
 app = ApplicationBuilder().token(TOKEN).build()
 
 # Handlerlar
@@ -115,3 +109,4 @@ app.add_handler(CallbackQueryHandler(inline_handler))
 
 print("Bot ishga tushdi...")
 app.run_polling()
+
